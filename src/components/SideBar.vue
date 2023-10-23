@@ -8,7 +8,7 @@
         <span class="text"> 臺灣銀行 </span>
       </router-link>
       <router-link class="button" to="/about">
-        <span class="text"> 中國信託 </span>
+        <span class="text"> 貨幣轉換 </span> 
       </router-link>
     </div>
   </aside>

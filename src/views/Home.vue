@@ -1,12 +1,21 @@
 <script setup>
 import { ref } from "vue";
-import converter from '../assets/taiwanBank.json'
+import tbAPI from "../api/taiwanBank";
 import { timeFormate } from "../utils/tools";
 
 const exchangeRates = ref([]);
 const time = ref();
 
-exchangeRates.value = converter
+async function fetchRates() {
+  const response = await tbAPI.getTaiwanBankRate()
+
+  const currencies = response.data.currencies
+
+  exchangeRates.value = currencies
+}
+
+fetchRates()
+
 time.value = timeFormate(new Date())
 </script>
 
@@ -28,8 +37,8 @@ time.value = timeFormate(new Date())
 
       <tbody>
 
-        <tr v-for="exchangeRate in exchangeRates" :key="exchangeRate.index">
-          <td scope="col">{{ exchangeRate["currency"] }}</td>
+        <tr v-for="exchangeRate in exchangeRates" :key="exchangeRate.id">
+          <td scope="col">{{ exchangeRate["name"] }}</td>
           <td scope="col">{{ exchangeRate["cashBuy"] }}</td>
           <td scope="col">{{ exchangeRate["cashSell"] }}</td>
           <td scope="col">{{ exchangeRate["sightBuy"] }}</td>
