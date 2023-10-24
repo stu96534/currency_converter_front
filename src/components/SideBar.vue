@@ -7,7 +7,7 @@
       <router-link class="button" to="/">
         <span class="text"> 臺灣銀行 </span>
       </router-link>
-      <router-link class="button" to="/about">
+      <router-link class="button" to="/converter">
         <span class="text"> 貨幣轉換 </span> 
       </router-link>
     </div>

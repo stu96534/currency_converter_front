@@ -11,6 +11,11 @@ const router = createRouter({
       component: Home
     },
     {
+      path: '/converter',
+      name: 'converter',
+      component: () => import('../views/Conversion.vue')
+    },
+    {
       path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: NotFound
