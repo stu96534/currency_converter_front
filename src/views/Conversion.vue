@@ -1,25 +1,35 @@
 <script setup >
+import { ref } from "vue";
+import tbAPI from "../api/taiwanBank";
+
+const exchangeRates = ref([]);
+
+async function fetchRates() {
+  const response = await tbAPI.getTaiwanBankRate()
+
+  const currencies = response.data.currencies
+
+  for (let i = 0; i < currencies.length; i++) {
+    currencies[i].image = "../../public/" + currencies[i].name + ".jpg"
+  }
+
+  exchangeRates.value = currencies
+
+}
+
+fetchRates()
+
+
 </script>
 
 <template>
   <div class="container">
     <div class="nation">
-  <button class="card">
-    <img src="../../public/usa-flag.jpg" alt="">
-    <h3>美金(USD)</h3>
+  <button class="card" v-for="exchangeRate in exchangeRates" :key="exchangeRate.id">
+    <img :src= exchangeRate.image alt="">
+    <h3>{{ exchangeRate["name"] }}</h3>
   </button>
-  <button class="card">
-      <img src="../../public/usa-flag.jpg" alt="">
-      <h3>美金(USD)</h3>
-    </button>
-    <button class="card">
-      <img src="../../public/usa-flag.jpg" alt="">
-      <h3>美金(USD)</h3>
-    </button>
-    <button class="card">
-      <img src="../../public/usa-flag.jpg" alt="">
-      <h3>美金(USD)</h3>
-    </button>
+ 
     
     </div>
     
@@ -48,15 +58,16 @@
 }
 
 img {
-  width: 80px;
+  width: 90px;
 }
 
 .card {
   background: white;
   border-radius: 12px 12PX;
   box-shadow: 0 2px 12px rgba(32, 32, 32, .3);
-  width: 85px;
+  width: 100px;
   height: 85px;
+  font-size: 11px
 }
 
 </style>
