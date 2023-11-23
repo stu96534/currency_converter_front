@@ -3,11 +3,9 @@ import SideBar from './components/SideBar.vue'
 </script>
 
 <template>
-   
   <SideBar />
 
-     <RouterView/>
-
+  <RouterView />
 </template>
 
 <style lang="scss">
@@ -41,6 +39,7 @@ button {
 #app {
   display: flex;
 
+
   main {
     flex: 1 1 0;
     padding: 2rem;
@@ -49,6 +48,10 @@ button {
       padding-left: 6rem;
     }
   }
-}
 
+  @media only screen and (max-width: 450px) {
+    flex-direction: column;
+   
+  }
+}
 </style>

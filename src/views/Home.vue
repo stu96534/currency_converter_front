@@ -1,11 +1,17 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 import tbAPI from "../api/taiwanBank";
 import { timeFormate } from "../utils/tools";
 
 const exchangeRates = ref([]);
 const time = ref();
 
+//更新貨幣匯率
+const update = async () => {  await tbAPI.updateTaiwanBankRate() }
+
+update()
+
+//取得貨幣匯率資料
 async function fetchRates() {
   const response = await tbAPI.getTaiwanBankRate()
 
@@ -14,7 +20,9 @@ async function fetchRates() {
   exchangeRates.value = currencies
 }
 
-fetchRates()
+onBeforeMount(() => {
+  fetchRates()
+})
 
 time.value = timeFormate(new Date())
 </script>
@@ -22,7 +30,11 @@ time.value = timeFormate(new Date())
 <template>
   <main>
 
-    <h3>{{ time }}</h3>
+<div class="head">
+  <h3>{{ time }}</h3>
+  <p class="inform">※資料來源取自臺灣銀行牌告匯率</p>
+</div>
+    
 
     <table class="table">
       <thead>
@@ -30,7 +42,7 @@ time.value = timeFormate(new Date())
           <th scope="col">幣別</th>
           <th scope="col">現金買入</th>
           <th scope="col">現金賣出</th>
-          <th scope="col" class="state">即期買入</th>
+          <th scope="col">即期買入</th>
           <th scope="col">即期賣出</th>
         </tr>
       </thead>
@@ -60,10 +72,21 @@ time.value = timeFormate(new Date())
   outline: 0;
 }
 
+.head {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 98%;
+}
+
 h3 {
   position: relative;
   z-index: 2;
-  left: 15%;
+}
+
+.inform {
+  font-size: small;
+  color: gray;
 }
 
 table {
