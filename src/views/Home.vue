@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { ref, onBeforeMount } from "vue";
 import tbAPI from "../api/taiwanBank";
