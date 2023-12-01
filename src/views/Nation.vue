@@ -13,7 +13,7 @@ async function fetchRates() {
   const data = response.data.nations
 
   for (let i = 0; i < data.length; i++) {
-    data[i].image = "../../public/" + data[i].name + ".jpg"
+    data[i].image = "/" + data[i].name + ".jpg"
   }
 
   nations.value = data

@@ -13,7 +13,7 @@ const nation = computed(() => props.initialNation)
 <template>
   <router-link class="card" :to="{ name: 'converter', params: { id: nation.id } }">
 
-    <img :src=nation.image alt="">
+    <img :src= nation.image  alt="">
 
     <h3>{{ nation["name"] }}</h3>
 
