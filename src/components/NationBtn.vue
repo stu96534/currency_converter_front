@@ -68,6 +68,7 @@ img {
   .card {
     width: 60px;
     height: 85px;
+    text-align: center;
   }
 }
 </style>

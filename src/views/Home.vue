@@ -95,7 +95,7 @@ table {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 70%;
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   overflow: hidden;
@@ -124,5 +124,27 @@ td {
 
 tr:nth-child(even) {
   background-color: #eeeeee;
+}
+
+@media only screen and (max-width: 450px) {
+
+  table {
+    left: 38%;
+  }
+
+  th,
+td {
+  padding: 5px 10px;
+}
+
+th {
+  font-size: 13px;
+  padding: 0.7rem 10px;
+}
+
+td {
+  font-size: 12px;
+  padding: 5px 1rem;
+}
 }
 </style>
