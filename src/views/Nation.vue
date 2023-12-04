@@ -85,7 +85,8 @@ fetchRates()
   }
 
   .container { 
-    max-width: 100vw 
+    max-width: 100vw; 
+    width: 90%;
   }
 }
 </style>

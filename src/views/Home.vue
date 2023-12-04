@@ -95,7 +95,7 @@ table {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 70%;
   border-collapse: collapse;
   border-spacing: 0;
   overflow: hidden;
@@ -126,7 +126,33 @@ tr:nth-child(even) {
   background-color: #eeeeee;
 }
 
+@media only screen and (max-width: 1322px) {
+th {
+  font-size: medium;
+}
+ }
+
+ @media only screen and (max-width: 1154px) {
+th {
+  font-size: 14px;
+}
+ }
+
 @media only screen and (max-width: 450px) {
+
+  .head {
+  display: block-line;
+  position: relative;
+  z-index: 2;
+  left: -24%;
+  width: 130%;
+
+  .inform {
+  font-size:0.5rem;
+  padding-left: 1.1rem;
+  color: gray;
+}
+}
 
   table {
     left: 38%;
@@ -138,7 +164,7 @@ td {
 }
 
 th {
-  font-size: 13px;
+  font-size: 12px;
   padding: 0.7rem 10px;
 }
 
@@ -147,4 +173,5 @@ td {
   padding: 5px 1rem;
 }
 }
+
 </style>
