@@ -1,7 +1,7 @@
 # 貨幣轉換器
 以爬蟲技術取得台灣銀行貨幣匯率資料，用前後端分離方式打造，此為前端專案。
-- 部屬網站為vercel 網址: 
-- 後端專案連結：
+- 部屬網站為vercel 網址: https://currency-converter-front-six.vercel.app
+- 後端專案連結： https://github.com/stu96534/currency_converter.git
 
 ## 功能介紹
 ### 貨幣查詢
