@@ -152,7 +152,7 @@ function FRGtoTWD(e) {
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 730px) {
   .converter {
     font-size: small;
   }
@@ -161,10 +161,15 @@ function FRGtoTWD(e) {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-top: 1rem;
 
     .box {
       font-size: small;
       padding-top: 0.3rem;
+    }
+
+    .radio {
+      
     }
 
     .input {

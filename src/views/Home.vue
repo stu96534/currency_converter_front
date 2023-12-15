@@ -126,4 +126,53 @@ td {
 tr:nth-child(even) {
   background-color: #eeeeee;
 }
+
+@media only screen and (max-width: 1322px) {
+th {
+  font-size: medium;
+}
+ }
+
+ @media only screen and (max-width: 1154px) {
+th {
+  font-size: 14px;
+}
+ }
+
+@media only screen and (max-width: 450px) {
+
+  .head {
+  display: block-line;
+  position: relative;
+  z-index: 2;
+  left: -24%;
+  width: 130%;
+
+  .inform {
+  font-size:0.5rem;
+  padding-left: 1.1rem;
+  color: gray;
+}
+}
+
+  table {
+    left: 38%;
+  }
+
+  th,
+td {
+  padding: 5px 10px;
+}
+
+th {
+  font-size: 12px;
+  padding: 0.7rem 10px;
+}
+
+td {
+  font-size: 12px;
+  padding: 5px 1rem;
+}
+}
+
 </style>

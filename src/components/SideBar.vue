@@ -18,7 +18,6 @@
 
 aside { 
   display: flex;
-
   background-color: var(--dark);
   color: var(--light);
 }
@@ -64,6 +63,9 @@ h3 {
 
 
 @media only screen and (max-width: 450px) {
+  .menu {
+  margin: 0;
+}
   aside {
   flex-direction: column;
     width: 100vw;
