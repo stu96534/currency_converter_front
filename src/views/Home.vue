@@ -142,11 +142,8 @@ th {
 @media only screen and (max-width: 450px) {
 
   .head {
-  display: block-line;
-  position: relative;
-  z-index: 2;
-  left: -24%;
-  width: 130%;
+  display: flex;
+  
 
   .inform {
   font-size:0.5rem;
@@ -156,7 +153,9 @@ th {
 }
 
   table {
+    position: none;
     left: 38%;
+    flex-direction: column;
   }
 
   th,
