@@ -8,7 +8,7 @@ const exchangeRates = ref([]);
 const time = ref();
 
 //更新貨幣匯率
-const update = async () => {  await tbAPI.updateTaiwanBankRate() }
+const update = async () => { await tbAPI.updateTaiwanBankRate() }
 
 update()
 
@@ -31,11 +31,11 @@ time.value = timeFormate(new Date())
 <template>
   <main>
 
-<div class="head">
-  <h3>{{ time }}</h3>
-  <p class="inform">※資料來源取自臺灣銀行牌告匯率</p>
-</div>
-    
+    <div class="head">
+      <h3>{{ time }}</h3>
+      <p class="inform">※資料來源取自臺灣銀行牌告匯率</p>
+    </div>
+
 
     <table class="table">
       <thead>
@@ -128,50 +128,47 @@ tr:nth-child(even) {
 }
 
 @media only screen and (max-width: 1322px) {
-th {
-  font-size: medium;
+  th {
+    font-size: medium;
+  }
 }
- }
 
- @media only screen and (max-width: 1154px) {
-th {
-  font-size: 14px;
+@media only screen and (max-width: 1154px) {
+  th {
+    font-size: 14px;
+  }
 }
- }
 
 @media only screen and (max-width: 450px) {
 
   .head {
-  display: flex;
-  
 
-  .inform {
-  font-size:0.5rem;
-  padding-left: 1.1rem;
-  color: gray;
-}
-}
+    .inform {
+      font-size: 0.5rem;
+      padding-left: 1.1rem;
+      color: gray;
+    }
+  }
 
   table {
-    position: none;
+
     left: 38%;
-    flex-direction: column;
+    top: 50%;
   }
 
   th,
-td {
-  padding: 5px 10px;
-}
+  td {
+    padding: 5px 10px;
+  }
 
-th {
-  font-size: 12px;
-  padding: 0.7rem 10px;
-}
+  th {
+    font-size: 12px;
+    padding: 0.7rem 10px;
+  }
 
-td {
-  font-size: 12px;
-  padding: 5px 1rem;
+  td {
+    font-size: 12px;
+    padding: 5px 1rem;
+  }
 }
-}
-
 </style>
